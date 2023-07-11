@@ -40,12 +40,6 @@ public class LoginTests extends BaseTest {
 
 
 
-<<<<<<< Updated upstream
-        String url = "https://bbb.testpro.io/";
-        driver.get(url);
-        Assert.assertEquals(driver.getCurrentUrl(), url);
-        driver.quit();
-=======
->>>>>>> Stashed changes
+
     }
 }
