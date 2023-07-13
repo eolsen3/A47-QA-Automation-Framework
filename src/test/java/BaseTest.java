@@ -30,14 +30,16 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
     }
+
     @AfterMethod
     public void closeBrowser() {
         driver.quit();
   }
+
+
     public static void navigateToPage() {
         driver.get(url);
     }
-
     public static void provideEmail(String email) {
         WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
 //      //emailField.click(); //not needed

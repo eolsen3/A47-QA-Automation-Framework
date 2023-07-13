@@ -21,12 +21,9 @@ public void clickPlay() {
 
     playNextButton.click();
     playButton.click();
-
 }
 public boolean isSongPlaying() {
     WebElement soundbar = driver.findElement(By.xpath("//div[@data-testid= 'sound-bar-play']"));
     return soundbar.isDisplayed();
-
 }
-
 }
