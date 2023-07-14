@@ -4,13 +4,7 @@
 <suite name="Homework18">
     <test name="playSong">
         <classes>
-            <methods>
-              <class name="LoginTests"/>
-              <class name="BaseTest"/>
               <class name="Homework18"/>
-                <include name = "Homework18">
-                 </include>
-            </methods>
         </classes>
     </test>
 </suite>
