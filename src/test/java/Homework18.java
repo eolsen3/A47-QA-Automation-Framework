@@ -6,13 +6,14 @@ import org.testng.annotations.Test;
 public class Homework18 extends BaseTest {
 
     @Test
-public void playSong() {
+public void playSong() throws InterruptedException {
         navigateToPage();
         provideEmail("erika.olsen@testpro.io");
         providePassword("te$t$tudent");
         clickSubmit();
         clickPlay();
         Assert.assertTrue(isSongPlaying());
+        Thread.sleep(5000);
     }
 
 public void clickPlay() {

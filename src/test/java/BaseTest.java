@@ -40,6 +40,8 @@ public class BaseTest {
         driver.quit();
   }
     public void navigateToPage() {
+        driver.get(url);
+
     }
     public static void provideEmail(String email) {
         WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
