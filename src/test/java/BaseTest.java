@@ -32,19 +32,15 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
+        navigateToPage();
     }
-    @BeforeMethod
-    public static void navigateToPage() {
 
-        driver.get(url);
-    }
     @AfterMethod
     public void closeBrowser() {
         driver.quit();
   }
-
-
-
+    public void navigateToPage() {
+    }
     public static void provideEmail(String email) {
         WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
         emailField.clear();
