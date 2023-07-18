@@ -19,7 +19,7 @@ public class Homework19 extends BaseTest{
     }
 
    public void openPlaylist() {
-       WebElement clickTestProPlaylist = driver.findElement(By.cssSelector("[href='#!/playlist/64251']"));
+       WebElement clickTestProPlaylist = driver.findElement(By.cssSelector("#playlists > ul > li:nth-child(3)"));
        clickTestProPlaylist.click();
    }
 
@@ -30,7 +30,7 @@ public class Homework19 extends BaseTest{
    }
 
    public String getDeletedPlaylistMsg() {
-        WebElement successMessage = driver.findElement(By.cssSelector(".alertify-logs.right.top > .show.success"));
+        WebElement successMessage = driver.findElement(By.cssSelector("body > .alertify-logs.right.top"));
         return successMessage.getText();
    }
 
