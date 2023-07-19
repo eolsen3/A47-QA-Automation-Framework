@@ -15,7 +15,9 @@ public class Homework19 extends BaseTest{
         clickSubmit();
         openPlaylist();
         clickDeletePlaylistBtn();
-        Assert.assertTrue(getDeletedPlaylistMsg().contains(deletedPlayListMsg));
+        String actualmsg = getDeletedPlaylistMsg();
+        String expectedmsg = "Deleted playlist \"Test Pro Playlist.\"";
+        Assert.assertEquals(actualmsg, expectedmsg);
     }
 
    public void openPlaylist() {
@@ -26,11 +28,11 @@ public class Homework19 extends BaseTest{
    public void clickDeletePlaylistBtn() throws InterruptedException {
         WebElement deletePlaylist = driver.findElement(By.cssSelector("button[title='Delete this playlist']"));
         deletePlaylist.click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
    }
 
    public String getDeletedPlaylistMsg() {
-        WebElement successMessage = driver.findElement(By.cssSelector("div.success.show"));
+        WebElement successMessage = driver.findElement(By.xpath("/html/body/div[2]/div"));
         return successMessage.getText();
    }
 }
