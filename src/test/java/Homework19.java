@@ -30,8 +30,7 @@ public class Homework19 extends BaseTest{
    }
 
    public String getDeletedPlaylistMsg() {
-        WebElement successMessage = driver.findElement(By.cssSelector("body > .alertify-logs.right.top"));
+        WebElement successMessage = driver.findElement(By.cssSelector("div.success.show"));
         return successMessage.getText();
    }
-
 }
