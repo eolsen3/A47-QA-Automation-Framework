@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,7 +19,8 @@ public class LoginTests extends BaseTest {
         provideEmail("erika.olsen@testpro.io");
         providePassword("te$t$tudent");
         clickSubmit();
-        WebElement avatarIcon = driver.findElement(By.cssSelector("[alt='Avatar of student']"));
+        WebElement avatarIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[alt='Avatar of student']")));
+
         Assert.assertTrue(avatarIcon.isDisplayed());
     }
 }
