@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Homework19_20 extends BaseTest{
@@ -14,9 +15,9 @@ public class Homework19_20 extends BaseTest{
         clickSubmit();
         openPlaylist();
         clickDeletePlaylistBtn();
-//        String actualMsg = getDeletedPlaylistMsg();
-//        String expectedMsg = "Deleted playlist \"Test Pro Playlist.\"";
-//        Assert.assertEquals(actualMsg, expectedMsg);
+        String actualMsg = getDeletedPlaylistMsg();
+        String expectedMsg = "Deleted playlist \"Test Pro Playlist.\"";
+        Assert.assertEquals(actualMsg, expectedMsg);
     }
 
    public void openPlaylist() {
@@ -34,4 +35,5 @@ public class Homework19_20 extends BaseTest{
           WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div")));
         return successMessage.getText();
    }
+
 }

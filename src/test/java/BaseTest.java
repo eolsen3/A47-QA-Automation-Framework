@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BaseTest {
 
     public static WebDriver driver;
-    WebDriverWait wait;
+    public static WebDriverWait wait;
 
 //    These aren't working. For now, passing the locators in with the methods.
 //    By emailField = By.cssSelector("input[type='email']");
@@ -39,10 +39,10 @@ public class BaseTest {
         options.addArguments("--disable-notifications");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-//        url = BaseUrl;
+        url = BaseUrl;
+        driver.get(url);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(8));
         navigateToPage();
     }
 
