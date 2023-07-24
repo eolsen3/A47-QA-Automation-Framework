@@ -17,6 +17,7 @@ public class Homework19_20 extends BaseTest{
         clickDeletePlaylistBtn();
         String actualMsg = getDeletedPlaylistMsg();
         String expectedMsg = "Deleted playlist \"Test Pro Playlist.\"";
+        Thread.sleep(5000);
         Assert.assertEquals(actualMsg, expectedMsg);
     }
 
@@ -32,8 +33,11 @@ public class Homework19_20 extends BaseTest{
    }
 
    public String getDeletedPlaylistMsg() {
-          WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div")));
+          WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.success.show")));
+//          /html/body/div[2]/div
         return successMessage.getText();
    }
+
+
 
 }
