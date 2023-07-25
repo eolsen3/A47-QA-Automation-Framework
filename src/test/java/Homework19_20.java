@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class Homework19_20 extends BaseTest{
     @Test
 
-    public void deletePlaylist () throws InterruptedException {
+    public void deletePlaylist ()  {
         String deletedPlayListMsg = "Deleted Playlist";
 
         provideEmail("erika.olsen@testpro.io");
@@ -17,7 +17,6 @@ public class Homework19_20 extends BaseTest{
         clickDeletePlaylistBtn();
         String actualMsg = getDeletedPlaylistMsg();
         String expectedMsg = "Deleted playlist \"Test Pro Playlist.\"";
-        Thread.sleep(5000);
         Assert.assertEquals(actualMsg, expectedMsg);
     }
 
@@ -26,7 +25,7 @@ public class Homework19_20 extends BaseTest{
        clickTestProPlaylist.click();
    }
 
-   public void clickDeletePlaylistBtn() throws InterruptedException {
+   public void clickDeletePlaylistBtn()  {
         WebElement deletePlaylist = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[title='Delete this playlist']")));
         deletePlaylist.click();
 
