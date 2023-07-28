@@ -8,7 +8,7 @@ public class Homework19_20 extends BaseTest{
     @Test
 
     public void deletePlaylist ()  {
-        String deletedPlayListMsg = "Deleted Playlist";
+        String deletedPlayListMsg = "Deleted Playlist";//we can remove this
 
         provideEmail("erika.olsen@testpro.io");
         providePassword("te$t$tudent");
