@@ -13,7 +13,6 @@ public void playSong() throws InterruptedException {
         clickSubmit();
         clickPlay();
         Assert.assertTrue(isSongPlaying());
-        Thread.sleep(5000);
     }
 
 public void clickPlay() {
