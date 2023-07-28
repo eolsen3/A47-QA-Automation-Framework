@@ -11,6 +11,7 @@ public void playSong() throws InterruptedException {
         provideEmail("erika.olsen@testpro.io");
         providePassword("te$t$tudent");
         clickSubmit();
+        Thread.sleep(2000);
         clickPlay();
         Assert.assertTrue(isSongPlaying());
         Thread.sleep(5000);
