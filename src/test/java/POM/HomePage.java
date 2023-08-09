@@ -3,6 +3,7 @@ package POM;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
     public HomePage(WebDriver givenDriver) {
@@ -22,7 +23,9 @@ public class HomePage extends BasePage {
     }
     public boolean isSongPlaying() {
         By soundbar =  By.xpath("//div[@data-testid= 'sound-bar-play']");
-        return soundbar.isDisplayed();
+        WebElement soundBarElement = findElement(soundbar);
+        return findElement(soundbar).isDisplayed();
+//        return soundbar.isDisplayed();
     }
 
     public void doubleClickPlaylist() {

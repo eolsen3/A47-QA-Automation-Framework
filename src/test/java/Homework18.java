@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,8 +17,8 @@ public void playSong() throws InterruptedException {
     }
 
 public void clickPlay() {
-    WebElement playNextButton = driver.findElement(By.xpath("//i[@data-testid='play-next-btn']"));
-    WebElement playButton = driver.findElement(By.xpath("//span[@data-testid='play-btn']"));
+    WebElement playNextButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@data-testid='play-next-btn']")));
+    WebElement playButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-testid='play-btn']")));
 
     
     playNextButton.click();
